@@ -4,12 +4,9 @@ from django.db import models
 
 
 class Comment(models.Model):
-    video_id = models.CharField(max_length=100)
     comment = models.CharField(max_length=300)
-    comment_replys = models.CharField(max_length=300)
-    likes = models.IntegerField()
-    dislikes = models.IntegerField()
-    create_date = models.DateField()
+    commentId = models.IntegerField(default=None)
+    videoId = models.IntegerField(default=None)
 
     def __str__(self):
-        return self.video_id
+        return self.comment
